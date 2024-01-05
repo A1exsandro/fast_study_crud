@@ -39,10 +39,12 @@ def init_app():
     from app.router import tipo_equipamento
     from app.router import marca
     from app.router import modelo
+    from app.router import sistema_operacional
 
     app.include_router(tipo_equipamento.router)
     app.include_router(marca.router)
     app.include_router(modelo.router)
+    app.include_router(sistema_operacional.router)
     
     return app
 
