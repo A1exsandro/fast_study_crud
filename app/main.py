@@ -37,8 +37,10 @@ def init_app():
         await db.close()
 
     from app.router import tipo_equipamento
+    from app.router import marca
 
     app.include_router(tipo_equipamento.router)
+    app.include_router(marca.router)
     
     return app
 
