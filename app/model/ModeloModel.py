@@ -1,6 +1,6 @@
-from typing import Optional
+from typing import Optional, List
 
-from sqlmodel import SQLModel, Field
+from sqlmodel import SQLModel, Field, Relationship
 
 
 class Modelo(SQLModel, table=True):
@@ -8,4 +8,5 @@ class Modelo(SQLModel, table=True):
 
     id: Optional[int] = Field(None, primary_key=True, nullable=False)
     nome: str = Field(unique=True)
+    equipamentos: List["Equipamento"] = Relationship(back_populates="modelo")
     
